@@ -1,0 +1,20 @@
+Training a GradientBoostingClassifier using a training set size of 100. . .
+Trained model in 0.0663 seconds
+Made predictions in 0.0006 seconds.
+F1 score for training set: 1.0000.
+Made predictions in 0.0005 seconds.
+F1 score for test set: 0.7087.
+------------------------------------------------------------
+Training a GradientBoostingClassifier using a training set size of 200. . .
+Trained model in 0.0857 seconds
+Made predictions in 0.0011 seconds.
+F1 score for training set: 0.9857.
+Made predictions in 0.0009 seconds.
+F1 score for test set: 0.7874.
+------------------------------------------------------------
+Training a GradientBoostingClassifier using a training set size of 300. . .
+Trained model in 0.1135 seconds
+Made predictions in 0.0010 seconds.
+F1 score for training set: 0.9670.
+Made predictions in 0.0005 seconds.
+F1 score for test set: 0.7154.
