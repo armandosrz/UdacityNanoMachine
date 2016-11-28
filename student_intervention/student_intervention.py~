@@ -342,7 +342,7 @@ plt.legend(['y = Tree_train', 'y = SVM_train', 'y = EGB_train'],
            bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0)
 plt.ylabel('Score')
 plt.title('Training Scores')
-plt.show()
+#plt.show()
 
 
 for a in range(1,6,2):
@@ -351,7 +351,7 @@ plt.legend(['y = Tree_test', 'y = SVM_test', 'y = EGB_test'],
            bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0)
 plt.ylabel('Score')
 plt.title('Testing Scores')
-plt.show()
+#plt.show()
 
 
 # ## Choosing the Best Model
@@ -396,18 +396,24 @@ plt.show()
 # TODO: Import 'GridSearchCV' and 'make_scorer'
 from sklearn.metrics import make_scorer
 from sklearn.grid_search import GridSearchCV
+from sklearn.cross_validation import ShuffleSplit
 
-print 'Hey'
+
+
 # TODO: Create the parameters list you wish to tune
 parameters = {'kernel':['linear', 'rbf', 'poly','sigmoid'], 
-              'C': [0.6, .5, .7, 1],
+              'C': [0.6, 1, 1.5, 3],
               'probability': [True, False],
               'tol': [1e-6,1e-5,1e-7],
               'random_state': [37]
              }
 
 # TODO: Initialize the classifier
+'''
 clf = svm.SVC()
+
+cv_sets = ShuffleSplit(X_train.shape[0], n_iter = 10, test_size = 0.20, random_state = 0)
+'''
 
 # TODO: Make an f1 scoring function using 'make_scorer' 
 def f1_metrics(y_true, y_pred):
