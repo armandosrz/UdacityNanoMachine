@@ -1218,24 +1218,24 @@ F1 score for test set: 0.7536.
 <tbody>
 <tr>
 <td style="text-align:center">100</td>
-<td style="text-align:center">0.0014</td>
+<td style="text-align:center">0.0012</td>
 <td style="text-align:center">0.0004</td>
 <td style="text-align:center">1.00</td>
-<td style="text-align:center">0.6724</td>
+<td style="text-align:center">0.6552</td>
 </tr>
 <tr>
 <td style="text-align:center">200</td>
-<td style="text-align:center">0.0026</td>
+<td style="text-align:center">0.0015</td>
 <td style="text-align:center">0.0003</td>
 <td style="text-align:center">1.00</td>
-<td style="text-align:center">0.7154</td>
+<td style="text-align:center">0.7231</td>
 </tr>
 <tr>
 <td style="text-align:center">300</td>
-<td style="text-align:center">0.0032</td>
+<td style="text-align:center">0.0022</td>
 <td style="text-align:center">0.0003</td>
 <td style="text-align:center">1.00</td>
-<td style="text-align:center">0.6891</td>
+<td style="text-align:center">0.7244</td>
 </tr>
 </tbody>
 </table>
@@ -1252,22 +1252,22 @@ F1 score for test set: 0.7536.
 <tbody>
 <tr>
 <td style="text-align:center">100</td>
-<td style="text-align:center">0.0024</td>
-<td style="text-align:center">0.0016</td>
-<td style="text-align:center">0.8889</td>
-<td style="text-align:center">0.7843</td>
+<td style="text-align:center">0.0010</td>
+<td style="text-align:center">0.009</td>
+<td style="text-align:center">0.8444</td>
+<td style="text-align:center">0.7287</td>
 </tr>
 <tr>
 <td style="text-align:center">200</td>
-<td style="text-align:center">0.0048</td>
-<td style="text-align:center">0.0018</td>
-<td style="text-align:center">0.8679</td>
-<td style="text-align:center">0.8027</td>
+<td style="text-align:center">0.0042</td>
+<td style="text-align:center">0.0016</td>
+<td style="text-align:center">0.8525</td>
+<td style="text-align:center">0.7755</td>
 </tr>
 <tr>
 <td style="text-align:center">300</td>
-<td style="text-align:center">0.0105</td>
-<td style="text-align:center">0.0024</td>
+<td style="text-align:center">0.0085</td>
+<td style="text-align:center">0.0021</td>
 <td style="text-align:center">0.8720</td>
 <td style="text-align:center">0.8212</td>
 </tr>
@@ -1286,24 +1286,24 @@ F1 score for test set: 0.7536.
 <tbody>
 <tr>
 <td style="text-align:center">100</td>
-<td style="text-align:center">0.0663</td>
+<td style="text-align:center">0.0647</td>
 <td style="text-align:center">0.0005</td>
 <td style="text-align:center">1.0000</td>
-<td style="text-align:center">0.7087</td>
+<td style="text-align:center">0.6723</td>
 </tr>
 <tr>
 <td style="text-align:center">200</td>
-<td style="text-align:center">0.0857</td>
-<td style="text-align:center">0.0009</td>
-<td style="text-align:center">0.9857</td>
-<td style="text-align:center">0.7874</td>
+<td style="text-align:center">0.0808</td>
+<td style="text-align:center">0.0004</td>
+<td style="text-align:center">0.9962</td>
+<td style="text-align:center">0.7669</td>
 </tr>
 <tr>
 <td style="text-align:center">300</td>
-<td style="text-align:center">0.1135</td>
-<td style="text-align:center">0.0005</td>
-<td style="text-align:center">0.9670</td>
-<td style="text-align:center">0.7154</td>
+<td style="text-align:center">0.0933</td>
+<td style="text-align:center">0.0004</td>
+<td style="text-align:center">0.9756</td>
+<td style="text-align:center">0.7536</td>
 </tr>
 </tbody>
 </table>
@@ -1897,7 +1897,7 @@ QmCC
 Dear Board of Directors,</p>
 <p>We are currently facing a classification problem, which means we need to use all our data to determine if one element belongs to it or not based on the attributes. For example, when determining if a vehicle is a car or a motorcycle we count the number of wheels; if 2 wheels are present then is a motorcyle else it is a car. Our goal is to find out if a student will fail or not the class based on the given parameters.</p>
 <p>This is precisely what a Support Vector Machine does. In order to explain it let us think about a football game. During the game we have 22 players on the field, for which 11 belongs to Ohio State and 11 belong to Michigan.  Before each play starts there is an imaginary line that divides the start point of those two teams known as the line of scrimmage. What SVM does is try to find this line of scrimmage in our data, so in the case another player is added to the Michigan side, we can surely predict is in fact a Michigan player (and an illegal formation penalty for them of course).</p>
-<p>In SVM we might have some ignorant players rooming in the wrong side of the field, so the line of scrimmage would not precisely give us a clean separation. But it will clearly give us a line that maximizes the division between this two categories.</p>
+<p>In SVM we might have some ignorant players rooming in the wrong side of the field, so the line of scrimmage would not precisely give us a clean separation. But it will clearly give us a line that maximizes the division between this two categories. It also inclues a <em>tric play</em>, known as kernel trick, that allow us to add new dimensions to our data in order to make better line separations.</p>
 
 </div>
 </div>
@@ -2040,10 +2040,10 @@ Tuned model has a testing F1 score of 0.8205.
 <tbody>
 <tr>
 <td style="text-align:center">Un-tuned</td>
-<td style="text-align:center">0.0105</td>
-<td style="text-align:center">0.0024</td>
+<td style="text-align:center">0.0085</td>
+<td style="text-align:center">0.0021</td>
 <td style="text-align:center">0.8650</td>
-<td style="text-align:center">0.7838</td>
+<td style="text-align:center">0.8212</td>
 </tr>
 <tr>
 <td style="text-align:center">Tuned</td>
@@ -2055,8 +2055,8 @@ Tuned model has a testing F1 score of 0.8205.
 </tbody>
 </table>
 <ul>
-<li><strong>Scores</strong>: In terms of scores the Tuned model gets a significant better performance in terms of testing (.0057)  but about 3.5 %  worst in terms of the training set.</li>
-<li><strong>Time</strong>: The big performance increase in the model occured in terms of time. We were able to reduce the amount spend during training by  almost half to 0.0056 seconds and the prediction time was also reduced. </li>
+<li><strong>Scores</strong>: In terms of scores the Tuned model gets a similar performance in terms of testing but about 3.5 %  worst in terms of the training set.</li>
+<li><strong>Time</strong>: The big performance increase in the model occured in terms of time. We were able to reduce the amount spend during training by 0.0029 seconds and the prediction time was also reduced. </li>
 </ul>
 <p>Overall by tuning the model we were able to siglithly increase the testing scores in the model but made a huge imporvement in terms of time efficiency.</p>
 
