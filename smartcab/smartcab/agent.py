@@ -4,6 +4,10 @@ from environment import Agent, Environment
 from planner import RoutePlanner
 from simulator import Simulator
 
+
+'''
+https://github.com/mzhigarev/SmartCab/blob/master/agent.py
+'''
 class LearningAgent(Agent):
     """ An agent that learns to drive in the Smartcab world.
         This is the object you will be modifying. """
@@ -24,6 +28,13 @@ class LearningAgent(Agent):
         ###########
         # Set any additional class parameters as needed
 
+        # Deafaul new dic values for a new Q value
+        self def_dic = lambda: {
+                                'left': 0.0,
+                                'right': 0.0,
+                                'forward': 0.0,
+                                None: 0.0
+        }
 
     def reset(self, destination=None, testing=False):
         """ The reset function is called at the beginning of each trial.
@@ -84,6 +95,8 @@ class LearningAgent(Agent):
         # When learning, check if the 'state' is not in the Q-table
         # If it is not, create a new dictionary for that state
         #   Then, for each action available, set the initial Q-value to 0.0
+        if self.learning and sate not in self.Q:
+            self.Q[state] = self.def_dic()
 
         return
 
@@ -107,6 +120,8 @@ class LearningAgent(Agent):
             action = self.valid_actions[random_num]
         # When learning, choose a random action with 'epsilon' probability
         #   Otherwise, choose an action with the highest Q-value for the current state
+        #elif self.learning:
+        #    action = 
 
 
 
