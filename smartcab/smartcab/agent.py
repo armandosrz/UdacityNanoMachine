@@ -29,7 +29,7 @@ class LearningAgent(Agent):
         # Set any additional class parameters as needed
 
         # Deafaul new dic values for a new Q value
-        self def_dic = lambda: {
+        self.def_dic = lambda: {
                                 'left': 0.0,
                                 'right': 0.0,
                                 'forward': 0.0,
@@ -53,11 +53,12 @@ class LearningAgent(Agent):
         # Update additional class parameters as needed
         # If 'testing' is True, set epsilon and alpha to 0
 
-        self.epsilon = math.cos( math.pi/2/400 * self.trial_num)
+        #self.epsilon = math.cos( math.pi/2/400 * self.trial_num)
+        self.epsilon = self.epsilon - 0.05
         if testing == True:
             self.epsilon = 0
             self.alpha = 0
-        self.trials += 1
+        self.trial_num += 1
         return None
 
 
@@ -90,7 +91,8 @@ class LearningAgent(Agent):
         ###########
         # Calculate the maximum Q-value of all actions for a given state
         items = self.Q[state].items()
-        maxQ = items.sorted(key= lambda x: x[1])[-1]
+        maxQ = sorted(items, key= lambda x: x[1])[-1]
+
 
         # returning a tuple, with the action and the value.
         return maxQ
@@ -105,7 +107,7 @@ class LearningAgent(Agent):
         # When learning, check if the 'state' is not in the Q-table
         # If it is not, create a new dictionary for that state
         #   Then, for each action available, set the initial Q-value to 0.0
-        if self.learning and sate not in self.Q:
+        if self.learning and state not in self.Q:
             self.Q[state] = self.def_dic()
 
         return
@@ -151,12 +153,14 @@ class LearningAgent(Agent):
         #   Use only the learning rate 'alpha' (do not use the discount factor 'gamma')
 
         if self.learning:
-            if state not in Q:
+            if state not in self.Q:
                 self.Q[state] = self.def_dic()
 
             rate = self.alpha
             old_q = self.Q[state][action]
-            new_q = old_q + (rate * ((reward)- old_q))
+
+            #new_q = old_q + (rate * ((reward)- old_q))
+            new_q = (1 - rate) * old_q + (reward * self.alpha)
             self.Q[state][action] = new_q
 
 
@@ -195,13 +199,13 @@ def run():
     #   learning   - set to True to force the driving agent to use Q-learning
     #    * epsilon - continuous value for the exploration factor, default is 1
     #    * alpha   - continuous value for the learning rate, default is 0.5
-    agent = env.create_agent(LearningAgent)
+    agent = env.create_agent(LearningAgent, learning=True)
 
     ##############
     # Follow the driving agent
     # Flags:
     #   enforce_deadline - set to True to enforce a deadline metric
-    env.set_primary_agent(agent)
+    env.set_primary_agent(agent, enforce_deadline=True)
 
     ##############
     # Create the simulation
@@ -210,14 +214,14 @@ def run():
     #   display      - set to False to disable the GUI if PyGame is enabled
     #   log_metrics  - set to True to log trial and simulation results to /logs
     #   optimized    - set to True to change the default log file name
-    sim = Simulator(env)
+    sim = Simulator(env, update_delay=0.01, log_metrics=True, optimized=True)
 
     ##############
     # Run the simulator
     # Flags:
     #   tolerance  - epsilon tolerance before beginning testing, default is 0.05
     #   n_test     - discrete number of testing trials to perform, default is 0
-    sim.run()
+    sim.run(n_test=10)
 
 
 if __name__ == '__main__':
