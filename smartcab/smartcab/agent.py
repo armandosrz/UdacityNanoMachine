@@ -36,6 +36,8 @@ class LearningAgent(Agent):
                                 None: 0.0
         }
 
+        self.trial_num = 0  #number of trials being conducted
+
     def reset(self, destination=None, testing=False):
         """ The reset function is called at the beginning of each trial.
             'testing' is set to True if testing trials are being used
@@ -51,7 +53,14 @@ class LearningAgent(Agent):
         # Update additional class parameters as needed
         # If 'testing' is True, set epsilon and alpha to 0
 
+        self.epsilon = math.cos( math.pi/2/400 * self.trial_num)
+        if testing == True:
+            self.epsilon = 0
+            self.alpha = 0
+        self.trials += 1
         return None
+
+
 
     def build_state(self):
         """ The build_state function is called when the agent requests data from the
@@ -80,9 +89,10 @@ class LearningAgent(Agent):
         ## TO DO ##
         ###########
         # Calculate the maximum Q-value of all actions for a given state
+        items = self.Q[state].items()
+        maxQ = items.sorted(key= lambda x: x[1])[0]
 
-        maxQ = None
-
+        # returning a tuple, with the action and the value.
         return maxQ
 
 
@@ -120,11 +130,11 @@ class LearningAgent(Agent):
             action = self.valid_actions[random_num]
         # When learning, choose a random action with 'epsilon' probability
         #   Otherwise, choose an action with the highest Q-value for the current state
-        #elif self.learning:
-        #    action = 
-
-
-
+        else:
+            if self.epsilon > random.random():
+                action = self.valid_actions[random_num]
+            else:
+                action = self.get_maxQ(state)[0]
 
         return action
 
@@ -139,6 +149,16 @@ class LearningAgent(Agent):
         ###########
         # When learning, implement the value iteration update rule
         #   Use only the learning rate 'alpha' (do not use the discount factor 'gamma')
+
+        if self.learning:
+            if state not in Q:
+                self.Q[state] = self.def_dic()
+
+            rate = self.alpha
+            old_q = self.Q[state][action]
+            new_q = old_q + (rate * ((reward)- old_q))
+            self.Q[state][action] = new_q
+
 
         return
 
