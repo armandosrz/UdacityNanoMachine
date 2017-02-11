@@ -91,7 +91,7 @@ class LearningAgent(Agent):
         ###########
         # Calculate the maximum Q-value of all actions for a given state
         items = self.Q[state].items()
-        maxQ = sorted(items, key= lambda x: x[1])[0]
+        maxQ = sorted(items, key= lambda x: x[1])[-1]
 
         # returning a tuple, with the action and the value.
         return maxQ
