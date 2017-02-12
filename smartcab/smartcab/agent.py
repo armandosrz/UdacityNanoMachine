@@ -5,9 +5,6 @@ from planner import RoutePlanner
 from simulator import Simulator
 
 
-'''
-https://github.com/mzhigarev/SmartCab/blob/master/agent.py
-'''
 class LearningAgent(Agent):
     """ An agent that learns to drive in the Smartcab world.
         This is the object you will be modifying. """
@@ -58,6 +55,7 @@ class LearningAgent(Agent):
         #self.epsilon = self.epsilon - 0.005
         a = 0.99
         #self.epsilon = math.exp(1)**(-a*self.trial_num)
+        self.epsilon = math.cos( a * self.trial_num)
 
         self.epsilon = a ** self.trial_num
 
@@ -227,7 +225,7 @@ def run():
     # Flags:
     #   tolerance  - epsilon tolerance before beginning testing, default is 0.05
     #   n_test     - discrete number of testing trials to perform, default is 0
-    sim.run(n_test=100, tolerance=0.0001)
+    sim.run(n_test=100, tolerance=0.01)
 
 
 if __name__ == '__main__':
