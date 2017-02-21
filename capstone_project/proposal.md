@@ -16,5 +16,8 @@ gain in performance and how different dimensions reductions impact performance.
 
 
 Datasets:
- - http://archive.ics.uci.edu/ml/datasets/Arrhythmia
- - 
+ - http://archive.ics.uci.edu/ml/datasets/Arrhythmia (279)
+ - http://archive.ics.uci.edu/ml/datasets/Urban+Land+Cover (148)
+ - http://archive.ics.uci.edu/ml/datasets/Hill-Valley (101)
+    - With noise and without noise
+  
