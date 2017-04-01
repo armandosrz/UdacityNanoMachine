@@ -5,4 +5,7 @@ For each specific part of the project please refer to:
 
  - (Reposiroty)[https://github.com/YeahHmm/Conniption]
  - (Proposal)[CapostoneProposal.pdf]
+ - (Proposal Submission)[https://review.udacity.com/#!/reviews/396992]
  - (Project)[CapstoneProject.pdf]
+
+ For the necessary project libraries, read the Conniption readme.
