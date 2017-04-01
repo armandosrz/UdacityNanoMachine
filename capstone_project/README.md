@@ -3,7 +3,7 @@
 ## Reinforcement learning in Conniption
 For each specific part of the project please refer to:
 
- - [Reposiroty](https://github.com/YeahHmm/Conniption)
+ - [Reposiroty](/Conniption)
  - [Proposal](CapostoneProposal.pdf)
  - [Proposal Submission](https://review.udacity.com/#!/reviews/396992)
  - [Project](CapstoneProject.pdf)
