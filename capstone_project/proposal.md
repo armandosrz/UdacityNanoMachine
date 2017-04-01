@@ -1,5 +1,8 @@
 # Capstone Project
 
-## Conniption Game
+## Reinforcement learning in Conniption
+For each specific part of the project please refer to:
 
-Update pdf file
+ - (Reposiroty)[https://github.com/YeahHmm/Conniption]
+ - (Proposal)[CapostoneProposal.pdf]
+ - (Project)[CapstoneProject.pdf]
