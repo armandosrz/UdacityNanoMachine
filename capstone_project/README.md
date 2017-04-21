@@ -16,4 +16,4 @@ For each specific part of the project please refer to:
  - [Proposal](CapstoneProposal.pdf)
  - [Proposal Submission](https://review.udacity.com/#!/reviews/396992)
 
- For the necessary project libraries, read the Conniption [README](/Conniption/README.md).
+ For the necessary project libraries, read the Conniption [README](/capstone_project/Conniption/README.md).
