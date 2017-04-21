@@ -7,8 +7,7 @@ Conniption is a modified connect-four game, in which the player has the possibil
 In this project we will use reinforcement learning to make and agent play conniption, with the final goal to defeat the agents build upon mini-max with alpha-beta pruning.
 a. Task:  Playing Conniption
 b. Performance:  Percent of games won against other players. Due to the characteristics of the game it matters whether you start as the player one or player Two.
-The main goal will be to build a reinforcement learning agent that will always
-maximize the next movement in order to obtain the best possible move. We will analyze the results from using a predictive model (minimax algorithm) against learning through repetition (reinforcement learning). Connect 4 is a deterministic solved game in which under optimum play from both players, player one will always win. We will explore if the same behavior is translated into Conniption and the influence it has on the agents.
+The main goal will be to build a reinforcement learning agent that will always maximize the next movement in order to obtain the best possible move. We will analyze the results from using a predictive model (minimax algorithm) against learning through repetition (reinforcement learning). Connect 4 is a deterministic solved game in which under optimum play from both players, player one will always win. We will explore if the same behavior is translated into Conniption and the influence it has on the agents.
 
 For each specific part of the project please refer to:
 
@@ -17,4 +16,4 @@ For each specific part of the project please refer to:
  - [Proposal](CapstoneProposal.pdf)
  - [Proposal Submission](https://review.udacity.com/#!/reviews/396992)
 
- For the necessary project libraries, read the Conniption readme.
+ For the necessary project libraries, read the Conniption [README](/Conniption/README.md).
