@@ -12,7 +12,7 @@ The main goal will be to build a reinforcement learning agent that will always m
 For each specific part of the project please refer to:
 
  - [Final Report](CapstoneProject.pdf)
- - [Repository](/Conniption)
+ - [Repository](/capstone_project/Conniption)
  - [Proposal](CapstoneProposal.pdf)
  - [Proposal Submission](https://review.udacity.com/#!/reviews/396992)
 
